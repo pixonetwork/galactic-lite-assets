@@ -1,0 +1,132 @@
+:root {
+    --neon: #00f2ff;
+    --neon-glow: rgba(0, 242, 255, 0.4);
+    --bg: #000000;
+    --border: rgba(255, 255, 255, 0.1);
+    --success: #39ff14;
+}
+
+/* --- THE ORBITRON BLACK PROTOCOL --- */
+* { 
+    font-family: 'Orbitron', sans-serif !important; 
+    font-weight: 900 !important; 
+    text-transform: uppercase;
+    box-sizing: border-box; 
+    letter-spacing: 1px;
+}
+
+body, html { 
+    margin: 0; padding: 0; height: 100vh; 
+    background: var(--bg); color: #fff; 
+    overflow: hidden; 
+}
+
+canvas#bg-canvas { position: fixed; inset: 0; z-index: -1; pointer-events: none; }
+
+/* --- LOGO ARCHITECTURE --- */
+.logo-container { display: inline-flex; align-items: center; gap: 2px; cursor: default; }
+.logo-main {
+    font-size: 1.8rem;
+    letter-spacing: 10px;
+    color: var(--neon);
+    text-shadow: 0 0 20px var(--neon);
+    line-height: 1;
+}
+.logo-lite-box {
+    background: var(--neon);
+    color: #000;
+    font-size: 9px;
+    padding: 2px 7px;
+    letter-spacing: 1px;
+    transform: rotate(90deg);
+    margin-left: -5px;
+    box-shadow: 0 0 15px var(--neon);
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 14px;
+}
+
+/* --- SPLASH LOADER --- */
+#splash {
+    position: fixed; inset: 0; background: #000; z-index: 5000;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+#splash.hidden { opacity: 0; pointer-events: none; }
+.splash-logo-wrap { transform: scale(1.6); margin-bottom: 80px; }
+
+/* --- UI ARCHITECTURE --- */
+.master-wrapper {
+    display: flex; flex-direction: column; height: 100vh;
+    max-width: 1400px; margin: 0 auto;
+    border-left: 1px solid var(--border); border-right: 1px solid var(--border);
+    background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(15px);
+}
+
+.header { 
+    padding: 35px 40px; 
+    border-bottom: 1px solid var(--border); 
+    display: flex; justify-content: space-between; align-items: center;
+    position: relative; z-index: 100;
+    background: rgba(0,0,0,0.5);
+}
+
+.search-area { 
+    padding: 25px 40px; 
+    position: relative; z-index: 100;
+    background: rgba(0,0,0,0.5);
+}
+
+#search-input {
+    width: 100%; background: #000; border: 2px solid var(--border);
+    padding: 20px 25px; color: var(--neon); outline: none;
+    font-size: 12px; letter-spacing: 2px; transition: 0.3s;
+}
+#search-input:focus { border-color: var(--neon); box-shadow: 0 0 25px var(--neon-glow); }
+
+.grid-container { 
+    flex: 1; overflow-y: auto; padding: 0 40px 40px 40px; 
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
+    gap: 20px; content-visibility: auto; justify-items: start;
+    position: relative; z-index: 1;
+}
+
+.game-card {
+    background: rgba(15, 15, 15, 0.95); border: 1px solid var(--border);
+    padding: 30px 15px; text-align: center; cursor: pointer;
+    transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1); position: relative;
+    width: 100%; max-width: 280px; height: 120px;
+    display: flex; align-items: center; justify-content: center;
+}
+.game-card:hover { 
+    border-color: var(--neon); transform: translateY(-5px); 
+    box-shadow: 0 0 25px var(--neon-glow); z-index: 10;
+}
+.game-name { font-size: 10px; color: #fff; line-height: 1.4; }
+.part-tag { position: absolute; bottom: 8px; right: 10px; font-size: 7px; color: var(--neon); opacity: 0.5; }
+
+/* --- THEATER & LOADERS --- */
+#theater { position: fixed; inset: 0; background: #000; z-index: 1000; display: none; flex-direction: column; transform: translateY(100%); transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
+#theater.active { display: flex; transform: translateY(0); }
+.theater-head { padding: 15px 35px; background: #050505; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+.close-btn { background: transparent; border: 1px solid #ff3333; color: #ff3333; padding: 10px 25px; font-size: 9px; cursor: pointer; transition: 0.3s; }
+.close-btn:hover { background: #ff3333; color: #000; }
+.theater-body { flex: 1; position: relative; overflow: hidden; }
+iframe { width: 100%; height: 100%; border: none; background: #000; }
+
+.loader-ui { display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.bar-container { width: 500px; height: 16px; background: rgba(255,255,255,0.05); border: 2px solid var(--border); overflow: hidden; margin-top: 20px; }
+.bar-fill { width: 0%; height: 100%; background: var(--neon); box-shadow: 0 0 30px var(--neon); transition: 0.2s; }
+.msg-text { font-size: 11px; color: var(--neon); margin-top: 20px; text-shadow: 0 0 10px var(--neon); }
+
+.stream-monitor { margin-top: 30px; width: 550px; max-height: 250px; overflow-y: auto; border-top: 1px solid var(--border); padding-top: 20px; }
+.stream-item { display: flex; justify-content: space-between; font-size: 9px; color: #444; margin-bottom: 8px; }
+.stream-item.active { color: var(--neon); }
+.stream-item.complete { color: var(--success); }
+.check-mark { display: none; margin-left: 10px; color: var(--success); text-shadow: 0 0 5px var(--success); }
+.stream-item.complete .check-mark { display: inline; }
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-thumb { background: var(--neon); border-radius: 10px; }
