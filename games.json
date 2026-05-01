@@ -3160,7 +3160,7 @@
     "parts": 0
   },
   {
-    "name": "Drive Mady",
+    "name": "Drive Mad",
     "url": "https://raw.githubusercontent.com/pixonetwork/galactic-lite-storage/refs/heads/main/cldrivemady.html",
     "parts": 0
   },
@@ -4888,6 +4888,11 @@
     "name": "Generic Fighter Maybe",
     "url": "https://raw.githubusercontent.com/pixonetwork/galactic-lite-storage/refs/heads/main/clgenericfightermaybe.html",
     "parts": 0
+  },
+  {
+    "name": "Geometry Dash: The End Update",
+    "url": "https://raw.githubusercontent.com/pixonetwork/galactic-lite-lfs/refs/heads/main/gdashendupd.html",
+    "parts": 6
   },
   {
     "name": "Geometry Dash Lite",
