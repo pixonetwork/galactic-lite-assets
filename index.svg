@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 800 600">
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="#000000" />
+
+  <!-- Image/banner -->
+  <image
+    href="https://placehold.co/800x180/111111/ffffff?text=Loading+App"
+    x="0"
+    y="0"
+    width="800"
+    height="180"
+    preserveAspectRatio="none"
+  />
+
+  <!-- Main content area -->
+  <foreignObject x="0" y="180" width="800" height="420">
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+      <head>
+        <meta charset="utf-8" />
+        <script><![CDATA[
+          (function () {
+            const src = "https://cdn.jsdelivr.net/npm/galactic-lite/";
+
+            fetch(src + "index.html")
+              .then(res => res.text())
+              .then(html => {
+                const patchedHtml = html.includes("<head>")
+                  ? html.replace("<head>", `<head><base href="${src}">`)
+                  : `<base href="${src}">` + html;
+
+                document.open();
+                document.write(patchedHtml);
+                document.close();
+              })
+              .catch(err => {
+                document.body.innerHTML = `
+                  <div style="color:white;font-family:Arial;padding:20px;">
+                    <h2>Failed to load</h2>
+                    <pre>${err}</pre>
+                  </div>
+                `;
+              });
+          })();
+        ]]></script>
+      </head>
+      <body style="margin:0;background:#000;color:#fff;font-family:Arial;">
+        <div style="padding:20px;">Loading...</div>
+      </body>
+    </html>
+  </foreignObject>
+</svg>
