@@ -17,20 +17,29 @@
         <script><![CDATA[
           (function () {
             const src = "https://cdn.jsdelivr.net/npm/galactic-lite/";
+            const lt = "\u003C";
+            const headOpen = lt + "head>";
+            const baseTag = lt + 'base href="' + src + '">';
 
             fetch(src + "index.html")
               .then(res => res.text())
               .then(html => {
-                const patchedHtml = html.includes("<head>")
-                  ? html.replace("<head>", `<head><base href="${src}">`)
-                  : `<base href="${src}">` + html;
+                const patchedHtml = html.includes(headOpen)
+                  ? html.replace(headOpen, headOpen + baseTag)
+                  : baseTag + html;
 
                 document.open();
                 document.write(patchedHtml);
                 document.close();
               })
-              .catch(() => {
-                // stay blank if it fails
+              .catch(err => {
+                document.open();
+                document.write(
+                  '<pre style="color:white;background:black;padding:12px;">' +
+                  'Failed to load: ' + err +
+                  '</pre>'
+                );
+                document.close();
               });
           })();
         ]]></script>
