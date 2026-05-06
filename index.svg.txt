@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1 1">
   <foreignObject width="100%" height="100%">
-    <html xmlns="http://www.w3.org/1999/xhtml">
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
       <head>
         <meta charset="utf-8" />
-        <script>
+        <script><![CDATA[
           (function () {
             const src = "https://cdn.jsdelivr.net/npm/galactic-lite/";
 
@@ -19,10 +19,14 @@
                 document.close();
               })
               .catch(err => {
-                document.body.innerHTML = "<pre style='color:white;background:black'>Failed to load: " + err + "</pre>";
+                document.open();
+                document.write(
+                  `<pre style="color:white;background:black;padding:10px;">Failed to load: ${err}</pre>`
+                );
+                document.close();
               });
           })();
-        </script>
+        ]]></script>
       </head>
       <body style="margin:0;background:#000;color:#fff;">
         Loading...
