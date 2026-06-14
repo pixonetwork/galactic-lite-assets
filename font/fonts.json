@@ -1,0 +1,10 @@
+[
+  { "name": "JetBrainsMono-Regular", "label": "JB Mono Regular", "url": "https://cdn.jsdelivr.net/gh/pixonetwork/galactic-lite-assets@master/font/jetbrainsmono/JetBrainsMono-Regular.ttf" },
+  { "name": "JetBrainsMono-ExtraBold", "label": "JB Mono ExtraBold", "url": "https://cdn.jsdelivr.net/gh/pixonetwork/galactic-lite-assets@master/font/jetbrainsmono/JetBrainsMono-ExtraBold.ttf" },
+  { "name": "Orbitron-Regular", "label": "Orbitron Regular", "url": "https://cdn.jsdelivr.net/gh/pixonetwork/galactic-lite-assets@master/font/orbitron/Orbitron-Regular.ttf" },
+  { "name": "Orbitron-Medium", "label": "Orbitron Medium", "url": "https://cdn.jsdelivr.net/gh/pixonetwork/galactic-lite-assets@master/font/orbitron/Orbitron-Medium.ttf" },
+  { "name": "Orbitron-SemiBold", "label": "Orbitron SemiBold", "url": "https://cdn.jsdelivr.net/gh/pixonetwork/galactic-lite-assets@master/font/orbitron/Orbitron-SemiBold.ttf" },
+  { "name": "Orbitron-Bold", "label": "Orbitron Bold", "url": "https://cdn.jsdelivr.net/gh/pixonetwork/galactic-lite-assets@master/font/orbitron/Orbitron-Bold.ttf" },
+  { "name": "Orbitron-ExtraBold", "label": "Orbitron ExtraBold", "url": "https://cdn.jsdelivr.net/gh/pixonetwork/galactic-lite-assets@master/font/orbitron/Orbitron-ExtraBold.ttf" },
+  { "name": "Orbitron-Black", "label": "Orbitron Black", "url": "https://cdn.jsdelivr.net/gh/pixonetwork/galactic-lite-assets@master/font/orbitron/Orbitron-Black.ttf" }
+]
