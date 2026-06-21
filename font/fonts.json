@@ -21,5 +21,5 @@
   { "name": "JetBrainsMono-SemiBoldItalic", "url": "https://cdn.jsdelivr.net/gh/pixonetwork/galactic-lite-assets/font/jetbrainsmono/JetBrainsMono-SemiBoldItalic.ttf", "label": "JB Semi Ital" },
   { "name": "JetBrainsMono-Thin", "url": "https://cdn.jsdelivr.net/gh/pixonetwork/galactic-lite-assets/font/jetbrainsmono/JetBrainsMono-Thin.ttf", "label": "JB Thin" },
   { "name": "JetBrainsMono-ThinItalic", "url": "https://cdn.jsdelivr.net/gh/pixonetwork/galactic-lite-assets/font/jetbrainsmono/JetBrainsMono-ThinItalic.ttf", "label": "JB Thin Italic" },
-  { "name": "Audiowide-Regular", "url": "https://cdn.jsdelivr.net/gh/pixonetwork/galactic-lite-assets/font/audiowide/Audiowide-Regular.ttf", "label": "Audiowide Regular" },
+  { "name": "Audiowide-Regular", "url": "https://cdn.jsdelivr.net/gh/pixonetwork/galactic-lite-assets/font/audiowide/Audiowide-Regular.ttf", "label": "Audiowide Regular" }
 ]
