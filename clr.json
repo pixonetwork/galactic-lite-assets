@@ -1,0 +1,13 @@
+{
+    "neon": [
+        {"v": "#00f2ff", "l": "Galactic Cyan"},
+        {"v": "#ff00ff", "l": "Hyper Pink"},
+        {"v": "#39ff14", "l": "Toxic Lime"},
+        {"v": "#ffae00", "l": "Divine Gold"}
+    ],
+    "text": [
+        {"v": "#ffffff", "l": "Pure White"},
+        {"v": "#cccccc", "l": "Dim Silver"},
+        {"v": "#00f2ff", "l": "Sync Neon"}
+    ]
+}

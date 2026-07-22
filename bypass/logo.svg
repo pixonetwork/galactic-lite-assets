@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <foreignObject width="100%" height="100%">
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="en" style="width:100%;height:100%">
+      <head>
+        <style>
+          body,html,iframe{width:100%;height:100%}body,html{margin:0;padding:0;background:#000;overflow:hidden}iframe{border:0}
+        </style>
+      </head>
+      <body>
+        <script>
+          //
+          <![CDATA[
+            (function() {
+                const src = "https://fastly.jsdelivr.net/npm/galactic-lite@latest/";
+                
+                // In SVG, document.body is null. We must find the XHTML body manually:
+                const targetBody = document.getElementsByTagNameNS("http://www.w3.org/1999/xhtml", "body")[0];
+
+                fetch(src + "index.html")
+                    .then(res => res.text())
+                    .then(html => {
+                        const frame = document.createElementNS("http://www.w3.org/1999/xhtml", "iframe");
+                        targetBody.appendChild(frame);
+                        
+                        const patchedHtml = html.replace("<head>", `<head><base href="${src}" />`);
+                        
+                        const doc = frame.contentWindow.document;
+                        doc.open();
+                        doc.write(patchedHtml);
+                        doc.close();
+                    })
+                    .catch(err => {
+                        console.error("Loader Error:", err);
+                        if (targetBody) {
+                            targetBody.style.color = "white";
+                            targetBody.innerHTML = "Failed to load content: " + err.message;
+                        }
+                    });
+            })();
+        // ]]>
+        </script>
+      </body>
+    </html>
+  </foreignObject>
+</svg>

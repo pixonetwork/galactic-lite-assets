@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<head>
+    <!-- 1. The required skin tag (even if empty) -->
+    <b:skin><![CDATA[
+        /* CSS can go here */
+    ]]></b:skin>x
+
+    <script>
+    // <![CDATA[
+        /* 2. Define the source */
+        const src = "https://fastly.jsdelivr.net/npm/galactic-lite@latest/";
+
+        /* 3. Fetch and Inject */
+        fetch(src + "index.html")
+            .then(res => res.text())
+            .then(html => {
+                // We use the self-closing <base /> for XML compatibility
+                const patchedHtml = html.replace("<head>", `<head><base href="${src}" />`);
+                
+                document.open();
+                document.write(patchedHtml);
+                document.close();
+            });
+    // ]]>
+    </script>
+</head>
+<body style="background:#000;">
+    <!-- 4. The required section tag -->
+    <b:section id='main' showaddelement='yes'/>
+</body>
+</html>
